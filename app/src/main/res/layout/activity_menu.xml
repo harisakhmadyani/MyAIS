@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background2"
+    android:orientation="vertical"
+    tools:context=".Activity.MenuActivity">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:stretchColumns="1">
+
+        <TableRow>
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="#BF000000"-->
+<!--                android:gravity="top"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:paddingHorizontal="10dp"-->
+<!--                android:paddingVertical="15dp">-->
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/myais" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SELAMAT DATANG"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/userid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="User ID"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TableRow>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Network"
+                                android:textColor="@color/white"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=":"
+                                android:textColor="@color/white"
+                                android:textSize="13sp"
+                                android:paddingLeft="3dp"
+                                android:paddingRight="3dp"/>
+
+                            <TextView
+                                android:id="@+id/koneksi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="-"
+                                android:textColor="@color/white"
+                                android:textSize="13sp" />
+                        </TableRow>
+
+                        <TableRow>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Serial Device"
+                                android:textColor="@color/white"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=":"
+                                android:textColor="@color/white"
+                                android:textSize="13sp"
+                                android:paddingLeft="3dp"
+                                android:paddingRight="3dp"/>
+
+                            <TextView
+                                android:id="@+id/serialapp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="-"
+                                android:textColor="@color/white"
+                                android:textSize="13sp" />
+                        </TableRow>
+
+                        <TableRow>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="App Version"
+                                android:textColor="@color/white"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=":"
+                                android:textColor="@color/white"
+                                android:textSize="13sp"
+                                android:paddingLeft="3dp"
+                                android:paddingRight="3dp"/>
+
+                            <TextView
+                                android:id="@+id/appversion"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="-"
+                                android:textColor="@color/white"
+                                android:textSize="13sp" />
+                        </TableRow>
+
+                    </TableLayout>
+
+
+
+
+
+
+<!--                </LinearLayout>-->
+
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/box_rounded_top"
+        android:stretchColumns="0">
+
+        <TableRow>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--            android:background="@drawable/box_rounded_10"-->
+                    <!--            android:backgroundTint="#B34CAF50"-->
+
+                    <!--            <LinearLayout-->
+                    <!--                android:id="@+id/absensi"-->
+                    <!--                android:layout_width="match_parent"-->
+                    <!--                android:layout_height="wrap_content"-->
+                    <!--                android:layout_marginHorizontal="10dp"-->
+                    <!--                android:layout_marginBottom="10dp"-->
+                    <!--                android:background="@drawable/box_rounded_10"-->
+                    <!--                android:backgroundTint="#BF00796B"-->
+                    <!--                android:orientation="vertical"-->
+                    <!--                android:padding="20dp">-->
+
+                    <!--                <ImageView-->
+                    <!--                    android:layout_width="50dp"-->
+                    <!--                    android:layout_height="50dp"-->
+                    <!--                    android:layout_gravity="center"-->
+                    <!--                    android:src="@drawable/take_picture" />-->
+
+                    <!--                <TextView-->
+                    <!--                    android:layout_width="match_parent"-->
+                    <!--                    android:layout_height="match_parent"-->
+                    <!--                    android:gravity="center"-->
+                    <!--                    android:text="Absensi"-->
+                    <!--                    android:textColor="@color/white"-->
+                    <!--                    android:textSize="25sp"-->
+                    <!--                    android:textStyle="bold" />-->
+
+                    <!--                <TextView-->
+                    <!--                    android:layout_width="match_parent"-->
+                    <!--                    android:layout_height="match_parent"-->
+                    <!--                    android:gravity="center"-->
+                    <!--                    android:text="Lakukan absensi hari ini"-->
+                    <!--                    android:textColor="@color/white"-->
+                    <!--                    android:textSize="12sp" />-->
+                    <!--            </LinearLayout>-->
+<!--                    <TableLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                        <TableRow>                        -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="4">
+
+                                <LinearLayout
+                                    android:id="@+id/absensimasuk"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"
+                                    android:padding="10dp">
+
+                                    <ImageView
+                                        android:layout_width="70dp"
+                                        android:layout_height="70dp"
+                                        android:layout_gravity="center"
+                                        android:src="@drawable/absen1" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="Absen Masuk"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp"/>
+
+<!--                                    <TextView-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="match_parent"-->
+<!--                                        android:gravity="center"-->
+<!--                                        android:text="Lakukan absensi hari ini"-->
+<!--                                        android:textColor="@color/black"-->
+<!--                                        android:textSize="8sp" />-->
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/absensiistirahat"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"
+                                    android:padding="10dp">
+
+                                    <ImageView
+                                        android:layout_width="70dp"
+                                        android:layout_height="70dp"
+                                        android:layout_gravity="center"
+                                        android:src="@drawable/absen2" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="Absen Istirahat"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp"/>
+
+<!--                                    <TextView-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="match_parent"-->
+<!--                                        android:gravity="center"-->
+<!--                                        android:text="Lakukan absensi hari ini"-->
+<!--                                        android:textColor="@color/black"-->
+<!--                                        android:textSize="8sp" />-->
+                                </LinearLayout>
+<!--                            </LinearLayout>-->
+
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginHorizontal="10dp"-->
+<!--                                android:weightSum="2">-->
+
+                                <LinearLayout
+                                    android:id="@+id/absensimasuk2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"
+                                    android:padding="10dp">
+
+                                    <ImageView
+                                        android:layout_width="70dp"
+                                        android:layout_height="70dp"
+                                        android:layout_gravity="center"
+                                        android:src="@drawable/absen3" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="Absen Masuk 2"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp" />
+
+<!--                                    <TextView-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="match_parent"-->
+<!--                                        android:gravity="center"-->
+<!--                                        android:text="Lakukan absensi hari ini"-->
+<!--                                        android:textColor="@color/black"-->
+<!--                                        android:textSize="8sp" />-->
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/absensipulang"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"
+                                    android:padding="10dp">
+
+                                    <ImageView
+                                        android:layout_width="70dp"
+                                        android:layout_height="70dp"
+                                        android:layout_gravity="center"
+                                        android:src="@drawable/absen4" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="Absen Pulang"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp" />
+
+<!--                                    <TextView-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="match_parent"-->
+<!--                                        android:gravity="center"-->
+<!--                                        android:text="Lakukan absensi hari ini"-->
+<!--                                        android:textColor="@color/black"-->
+<!--                                        android:textSize="8sp" />-->
+                                </LinearLayout>
+                            </LinearLayout>
+<!--                        </TableRow>-->
+<!--                    </TableLayout>                  -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:id="@+id/historyabsen"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/history" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="History"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+<!--                            <TextView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="Cek absensi diperangkat"-->
+<!--                                android:textColor="@color/black"-->
+<!--                                android:textSize="12sp" />-->
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/cekabsen"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/attendance" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="Cek Absensi"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+<!--                            <TextView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="Cek absensi diserver"-->
+<!--                                android:textColor="@color/black"-->
+<!--                                android:textSize="12sp" />-->
+                        </LinearLayout>
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginHorizontal="10dp"-->
+<!--                        android:weightSum="2">-->
+
+                        <LinearLayout
+                            android:id="@+id/anggota"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/member" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="Tenaga Kerja"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/jumlahanggota"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="Cek Tenaga Kerja"-->
+<!--                                android:textColor="@color/black"-->
+<!--                                android:textSize="12sp" />-->
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/settings"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/settings" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="Settings"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+<!--                            <TextView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="Pengaturan aplikasi"-->
+<!--                                android:textColor="@color/black"-->
+<!--                                android:textSize="12sp" />-->
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

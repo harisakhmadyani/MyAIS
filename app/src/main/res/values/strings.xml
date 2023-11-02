@@ -1,0 +1,24 @@
+<resources>
+    <!--    <string name="app_name">Absensi KHL</string>-->
+    <!--    &lt;!&ndash;    <string name="linkpublic">http://myrsup.co.id:5400/AbsensiPancangAPI/</string>&ndash;&gt;-->
+    <!--    &lt;!&ndash;    <string name="linkpublic_backup">http://apip2.myrsup.co.id:81/AbsensiPancangAPI/</string>&ndash;&gt;-->
+    <!--    &lt;!&ndash;    <string name="linklocal">http://192.168.12.68/AbsensiPancangAPI/</string>&ndash;&gt;-->
+    <!--    &lt;!&ndash;    <string name="linklocal_backup">http://192.168.12.168/AbsensiPancangAPI/</string>&ndash;&gt;-->
+    <string name="appversion">7.1</string>
+    <!--    <string name="title_activity_history_new">HistoryNewActivity</string>-->
+    <!--    <string name="tab_text_1">Masuk</string>-->
+    <!--    <string name="tab_text_2">Pulang</string>-->
+    <!--    &lt;!&ndash; TODO: Remove or change this placeholder text &ndash;&gt;-->
+    <!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
+    <!--    <string name="title_activity_main_history_new">MainHistoryNewActivity</string>-->
+
+    <string name="app_name">My AIS</string>
+    <string name="tab_text_1">Masuk</string>
+    <string name="tab_text_2">Istirahat</string>
+    <string name="tab_text_3">Masuk 2</string>
+    <string name="tab_text_4">Pulang</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

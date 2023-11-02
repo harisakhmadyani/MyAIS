@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+<!--    <TableLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="5dp"-->
+<!--        android:background="#FFBE52"-->
+<!--        android:stretchColumns="2">-->
+
+<!--        <TableRow>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/Nama"-->
+<!--                android:layout_span="3" -->
+<!--                android:gravity="center_horizontal"-->
+<!--                android:maxEms="4"-->
+<!--                android:text="Nama"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textAllCaps="true"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12sp"-->
+<!--                android:textStyle="bold" />-->
+<!--        </TableRow>-->
+
+<!--        <View-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="1dp"-->
+<!--            android:background="@color/white" />-->
+
+<!--        <TableRow>-->
+
+<!--            <TextView-->
+<!--                android:text="NIK"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12sp"/>-->
+
+<!--            <TextView-->
+<!--                android:text=" : "-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12sp"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/Nik"-->
+<!--                android:gravity="end"-->
+<!--                android:maxEms="4"-->
+<!--                android:text="-"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12sp"/>-->
+<!--        </TableRow>-->
+
+<!--        <View-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="1dp"-->
+<!--            android:background="@color/white" />-->
+
+<!--        <TableRow>-->
+
+<!--            <TextView-->
+<!--                android:text="Wilayah"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12sp"/>-->
+
+<!--            <TextView-->
+<!--                android:text=" : "-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12sp"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/Wilayah"-->
+<!--                android:gravity="end"-->
+<!--                android:maxEms="4"-->
+<!--                android:text="-"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12sp"/>-->
+<!--        </TableRow>-->
+
+<!--        <View-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="1dp"-->
+<!--            android:background="@color/white" />-->
+
+<!--        <TableRow>-->
+
+<!--            <TextView-->
+<!--                android:text="Jam Absensi"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12sp"/>-->
+
+<!--            <TextView-->
+<!--                android:text=" : "-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12sp"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/JamAbsensi"-->
+<!--                android:gravity="end"-->
+<!--                android:maxEms="4"-->
+<!--                android:text="-"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12sp"/>-->
+<!--        </TableRow>-->
+
+<!--        <View-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="1dp"-->
+<!--            android:background="@color/white" />-->
+
+<!--        <TableRow>-->
+
+<!--            <TextView-->
+<!--                android:text="Kehadiran"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12sp"/>-->
+
+<!--            <TextView-->
+<!--                android:text=" : "-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12sp"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/Kehadiran"-->
+<!--                android:gravity="end"-->
+<!--                android:maxEms="4"-->
+<!--                android:text="-"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12sp"-->
+<!--                android:textStyle="bold" />-->
+<!--        </TableRow>-->
+<!--    </TableLayout>-->
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginVertical="2dp"
+        app:cardElevation="3dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="#FFBE52">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/box_rounded_10_right"
+            android:backgroundTint="@color/white"
+            android:layout_marginLeft="15dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:stretchColumns="0"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp">
+
+                    <TableRow>
+                        <TextView
+                            android:id="@+id/Nama"
+                            android:maxEms="4"
+                            android:text="Nama"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            android:id="@+id/Nik"
+                            android:maxEms="4"
+                            android:text="NIK"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            android:id="@+id/Wilayah"
+                            android:maxEms="4"
+                            android:text="Wilayah"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+                    </TableRow>
+                </TableLayout>
+
+                <ImageView
+                    android:id="@+id/scs"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_check_circle_24_card"
+                    android:layout_gravity="center"
+                    android:visibility="visible">
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/wrn"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_info_24_card"
+                    android:layout_gravity="center"
+                    android:visibility="visible">
+                </ImageView>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#FFBE52" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:weightSum="1">
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="100dp"-->
+<!--                            android:layout_height="50dp"-->
+<!--                            android:layout_gravity="bottom"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:src="@drawable/masuk"-->
+<!--                            android:padding="2dp"-->
+<!--                            >-->
+
+<!--                        </ImageView>-->
+
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:stretchColumns="2">
+
+                            <TableRow>
+                                <TextView
+                                    android:maxEms="4"
+                                    android:text="Masuk"
+                                    android:layout_span="3"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold" />
+                            </TableRow>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="#FFBE52"
+                                android:layout_marginRight="5dp"/>
+                            <TableRow>
+                                <TextView
+                                    android:maxEms="4"
+                                    android:text="Jam"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"/>
+                                <TextView
+                                    android:maxEms="4"
+                                    android:text=":"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"
+                                    android:layout_marginLeft="3dp"/>
+                                <TextView
+                                    android:id="@+id/JamMasuk"
+                                    android:maxEms="4"
+                                    android:text="-"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"
+                                    android:layout_marginLeft="3dp"/>
+                            </TableRow>
+                            <TableRow>
+                                <TextView
+                                    android:maxEms="4"
+                                    android:text="Kehadiran"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"
+                                    />
+                                <TextView
+                                    android:maxEms="4"
+                                    android:text=":"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"
+                                    android:layout_marginLeft="3dp"/>
+                                <TextView
+                                    android:id="@+id/KehadiranMasuk"
+                                    android:maxEms="4"
+                                    android:text="-"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"
+                                    android:layout_marginLeft="3dp"/>
+                            </TableRow>
+                            <TableRow>
+                                <TextView
+                                    android:maxEms="4"
+                                    android:text="Persil"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"/>
+                                <TextView
+                                    android:maxEms="4"
+                                    android:text=":"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"
+                                    android:layout_marginLeft="3dp"/>
+                                <TextView
+                                    android:id="@+id/SubPersilMasuk"
+                                    android:maxEms="4"
+                                    android:text="-"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"
+                                    android:layout_marginLeft="3dp"/>
+                            </TableRow>
+
+                            <TableRow>
+                                <TextView
+                                    android:maxEms="4"
+                                    android:text="Ket."
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"/>
+                                <TextView
+                                    android:maxEms="4"
+                                    android:text=":"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"
+                                    android:layout_marginLeft="3dp"/>
+                                <TextView
+                                    android:id="@+id/KeteranganMasuk"
+                                    android:maxEms="4"
+                                    android:text="-"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"
+                                    android:layout_marginLeft="3dp"/>
+                            </TableRow>
+                        </TableLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="#FFBE52"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:weightSum="1">
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="100dp"-->
+<!--                            android:layout_height="50dp"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:src="@drawable/pulang"-->
+<!--                            android:layout_gravity="bottom"-->
+<!--                            android:padding="2dp"-->
+<!--                            >-->
+<!--                        </ImageView>-->
+
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:stretchColumns="2">
+
+                            <TableRow>
+                                <TextView
+                                    android:maxEms="4"
+                                    android:text="Pulang"
+                                    android:layout_span="3"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold" />
+                            </TableRow>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="#FFBE52"
+                                android:layout_marginRight="5dp"/>
+                            <TableRow>
+                                <TextView
+                                    android:maxEms="4"
+                                    android:text="Jam"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"/>
+                                <TextView
+                                    android:maxEms="4"
+                                    android:text=":"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"
+                                    android:layout_marginLeft="3dp"/>
+                                <TextView
+                                    android:id="@+id/JamPulang"
+                                    android:maxEms="4"
+                                    android:text="-"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"
+                                    android:layout_marginLeft="3dp"/>
+                            </TableRow>
+                            <TableRow>
+                                <TextView
+                                    android:maxEms="4"
+                                    android:text="Kehadiran"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"
+                                    />
+                                <TextView
+                                    android:maxEms="4"
+                                    android:text=":"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"
+                                    android:layout_marginLeft="3dp"/>
+                                <TextView
+                                    android:id="@+id/KehadiranPulang"
+                                    android:maxEms="4"
+                                    android:text="-"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"
+                                    android:layout_marginLeft="3dp"/>
+                            </TableRow>
+                            <TableRow>
+                                <TextView
+                                    android:maxEms="4"
+                                    android:text="Persil"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"/>
+                                <TextView
+                                    android:maxEms="4"
+                                    android:text=":"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"
+                                    android:layout_marginLeft="3dp"/>
+                                <TextView
+                                    android:id="@+id/SubPersilPulang"
+                                    android:maxEms="4"
+                                    android:text="-"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"
+                                    android:layout_marginLeft="3dp"/>
+                            </TableRow>
+
+                            <TableRow>
+                                <TextView
+                                    android:maxEms="4"
+                                    android:text="Ket."
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"/>
+                                <TextView
+                                    android:maxEms="4"
+                                    android:text=":"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"
+                                    android:layout_marginLeft="3dp"/>
+                                <TextView
+                                    android:id="@+id/KeteranganPulang"
+                                    android:maxEms="4"
+                                    android:text="-"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"
+                                    android:layout_marginLeft="3dp"/>
+                            </TableRow>
+                        </TableLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

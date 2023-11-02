@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/box_rounded_10"
+    android:backgroundTint="#BF0288D1"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="2">
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/Nama"
+                android:layout_span="3"
+                android:gravity="center_horizontal"
+                android:maxEms="4"
+                android:text="Nama"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/white" />
+
+        <TableRow>
+
+            <TextView
+                android:text="NIK"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:text=" : "
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/Nik"
+                android:gravity="end"
+                android:maxEms="4"
+                android:text="-"
+                android:textColor="@color/white" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/white" />
+
+        <TableRow>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:text="Wilayah"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:text=" : "
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/Jabatan"
+                android:gravity="end"
+                android:maxEms="4"
+                android:text="-"
+                android:textColor="@color/white" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>
