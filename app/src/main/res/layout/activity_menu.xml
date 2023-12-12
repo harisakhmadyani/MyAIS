@@ -402,7 +402,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="Cek Absensi"
+                                android:text="Monitoring Absensi"
                                 android:textColor="@color/black"
                                 android:textSize="12sp" />
 
@@ -440,7 +440,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="Tenaga Kerja"
+                                android:text="Data Tenaga Kerja"
                                 android:textColor="@color/black"
                                 android:textSize="12sp" />
 
@@ -453,6 +453,68 @@
 <!--                                android:textColor="@color/black"-->
 <!--                                android:textSize="12sp" />-->
                         </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/kecelakaan_kerja"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/kecelakaan_kerja3" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="Kecelakaan Kerja"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+<!--                            <TextView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="Pengaturan aplikasi"-->
+<!--                                android:textColor="@color/black"-->
+<!--                                android:textSize="12sp" />-->
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:id="@+id/monKecKerja"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/kecelakaan_kerja2" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="Monitoring Kecelakaan Kerja"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
 
                         <LinearLayout
                             android:id="@+id/settings"
@@ -475,14 +537,6 @@
                                 android:text="Settings"
                                 android:textColor="@color/black"
                                 android:textSize="12sp" />
-
-<!--                            <TextView-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="match_parent"-->
-<!--                                android:gravity="center"-->
-<!--                                android:text="Pengaturan aplikasi"-->
-<!--                                android:textColor="@color/black"-->
-<!--                                android:textSize="12sp" />-->
                         </LinearLayout>
                     </LinearLayout>
 

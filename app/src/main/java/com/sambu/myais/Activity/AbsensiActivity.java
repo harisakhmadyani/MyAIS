@@ -697,7 +697,7 @@ public class AbsensiActivity extends AppCompatActivity implements SurfaceHolder.
             }
 
             public void onProviderDisabled(String provider) {
-                Toast.makeText(AbsensiActivity.this, "Harap Hidupkan GPS Anda", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AbsensiActivity.this, "Harap hidupkan GPS anda", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
             }
         };
@@ -735,7 +735,7 @@ public class AbsensiActivity extends AppCompatActivity implements SurfaceHolder.
                 camera.startPreview();
                 kameraberjalan = true;
             } catch (IOException e) {
-                Toast.makeText(this, "Gagal Membuka Kamera", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Gagal membuka kamera", Toast.LENGTH_SHORT).show();
             }
         }
     }

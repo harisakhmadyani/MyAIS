@@ -7,7 +7,7 @@ import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
 public class DataBaseOpenHelper extends SQLiteAssetHelper {
     public static final String DATABASE_NAME = "AbsensiPancang.db";
-    public static final int DATABASE_VERSION = 6;
+    public static final int DATABASE_VERSION = 10;
 
     public DataBaseOpenHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

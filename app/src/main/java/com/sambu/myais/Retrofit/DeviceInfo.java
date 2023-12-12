@@ -13,8 +13,9 @@ public class DeviceInfo {
     String lanjut;
     String status;
     String KodeWilayah;
+    String GroupAccess;
 
-    public DeviceInfo(String ID, String serialDevice, String device, String model, String API2, String androidVersion, String APPVersion2, String pancangID, String createdDate, String status2, String lanjut2, String kodeWilayah) {
+    public DeviceInfo(String ID, String serialDevice, String device, String model, String API2, String androidVersion, String APPVersion2, String pancangID, String createdDate, String status2, String lanjut2, String kodeWilayah, String groupAccess) {
         this.UserID = ID;
         this.SerialDevice = serialDevice;
         this.Device = device;
@@ -27,6 +28,7 @@ public class DeviceInfo {
         this.status = status2;
         this.lanjut = lanjut2;
         this.KodeWilayah = kodeWilayah;
+        this.GroupAccess = groupAccess;
     }
 
     public String getUserID() {
@@ -74,4 +76,6 @@ public class DeviceInfo {
     }
 
     public String getKodeWilayah() { return this.KodeWilayah; }
+
+    public String getGroupAccess() { return this.GroupAccess; }
 }

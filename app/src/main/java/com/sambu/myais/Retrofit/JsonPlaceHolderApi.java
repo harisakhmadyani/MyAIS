@@ -25,6 +25,9 @@ public interface JsonPlaceHolderApi {
     @GET("Absensi/getAndroidHistory/{id}/{tanggal}")
     Call<List<HistoryCekAbsensi>> cekAbsensi(@Path("id") String id, @Path("tanggal") String str);
 
+    @GET("Absensi/GetMonKecelakaanKerja/{tanggal1}/{tanggal2}")
+    Call<List<Kecelakaan>> GetMonKecelakaanKerja(@Path("tanggal1") String tgl1, @Path("tanggal2") String tgl2);
+
     @GET("Pancang/Get")
     Call<List<Pancang>> getPancang();
 
@@ -32,6 +35,9 @@ public interface JsonPlaceHolderApi {
 
     @GET("TenagaKerja/GetByUser/{id}")
     Call<List<TenagaKerja>> GetTKByUser(@Path("id") String i);
+
+    @GET("TenagaKerja/GetByDept/{id}")
+    Call<List<TenagaKerja>> GetTKByDept(@Path("id") String i);
 
     @GET("SubPersilKelapa/GetByUser/{id}")
     Call<List<SubPersilKelapa>> GetSubPersilByUser(@Path("id") String i);
@@ -46,7 +52,14 @@ public interface JsonPlaceHolderApi {
     @GET("Absensi/GetKehadiran")
     Call<List<Kehadiran>> GetKehadiran();
 
+    @GET("Absensi/GetTipeKecelakaan")
+    Call<List<TipeKecelakaan>> GetTipeKecelakaan();
+
     @POST("Absensi/InsertAbsensi")
     @Multipart
     Call<List<ResponseStatus>> InsertAbsensi(@PartMap Map<String, RequestBody> map, @Part MultipartBody.Part part);
+
+    @FormUrlEncoded
+    @POST("Absensi/InsertKecelakaanKerja")
+    Call<List<ResponseStatus>> InsertKecelakaanKerja(@FieldMap Map<String, String> map);
 }

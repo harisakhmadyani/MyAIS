@@ -29,6 +29,7 @@ import com.sambu.myais.Retrofit.JsonPlaceHolderApi;
 import com.sambu.myais.Retrofit.Kehadiran;
 import com.sambu.myais.Retrofit.SubPersilKelapa;
 import com.sambu.myais.Retrofit.TenagaKerja;
+import com.sambu.myais.Retrofit.TipeKecelakaan;
 import com.sambu.myais.SplashScreen;
 
 import java.util.List;
@@ -42,13 +43,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class SettingsActivity extends AppCompatActivity {
 
 //    Button btnaddjaringan, btnkehadiran, btnpancang, btnclear,
-    LinearLayout btnclear,btnDownloadkehadiran,btnDownloadTenagaKerja,btndownloadsubpersil;
+    LinearLayout btnclear,btnDownloadkehadiran,btnDownloadTenagaKerja,btndownloadsubpersil, btnDownloadTipeKecelakaan;
     LinearLayout logout;
 //    ProgressBar loadingaddjaringan, loadingkehadiran, loadingpancang;
-    ProgressBar loadingdownloaddata,loadingdownloadsubpersil,loadingdownloadTTkkerja,loadingdownloadkehadiran;
+    ProgressBar loadingdownloaddata,loadingdownloadsubpersil,loadingdownloadTTkkerja,loadingdownloadkehadiran, loadingDownloadTipeKecelakaan;
     Spinner jenisjaringan, subpersilkelapa, subpersilkelapamasuk;
 //    Integer IDPancang;
-    String pilihanjaringan = "", pilihansubpersil = "", linkAPI = "", subpersil = "", UserID = "", pilihansubpersilmasuk = "" , subpersilmasuk = "";
+    String pilihanjaringan = "", pilihansubpersil = "", linkAPI = "", subpersil = "", UserID = "", pilihansubpersilmasuk = "" , subpersilmasuk = "", GroupAccess = "";
 
     JsonPlaceHolderApi jsonPlaceHolderApi;
     Retrofit retrofit;
@@ -67,9 +68,11 @@ public class SettingsActivity extends AppCompatActivity {
         btnDownloadkehadiran = findViewById(R.id.btnDownloadkehadiran);
         btnDownloadTenagaKerja = findViewById(R.id.btnDownloadTenagaKerja);
         btndownloadsubpersil = findViewById(R.id.btndownloadsubpersil);
+        btnDownloadTipeKecelakaan = findViewById(R.id.btndownloadtipekecelakaan);
         loadingdownloadkehadiran = findViewById(R.id.loadingdownloadkehadiran);
         loadingdownloadTTkkerja = findViewById(R.id.loadingdownloadTTkkerja);
         loadingdownloadsubpersil = findViewById(R.id.loadingdownloadsubpersil);
+        loadingDownloadTipeKecelakaan = findViewById(R.id.loadingdownloadtipekecelakaan);
 //        btndownloaddata = findViewById(R.id.btndownloaddata);
 //        loadingdownloaddata = findViewById(R.id.loadingdownloaddata);
         btnclear = findViewById(R.id.btnclear);
@@ -222,6 +225,25 @@ public class SettingsActivity extends AppCompatActivity {
                         loadingdownloadsubpersil.setVisibility(View.GONE);
                         getSubPersilMasukLokal();
                         getSubPersilKelapaLokal();
+
+                    }
+                },500);
+
+            }
+        });
+
+        btnDownloadTipeKecelakaan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btnDownloadTipeKecelakaan.setVisibility(View.GONE);
+                loadingDownloadTipeKecelakaan.setVisibility(View.VISIBLE);
+                getTipeKecelakaan();
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        btnDownloadTipeKecelakaan.setVisibility(View.VISIBLE);
+                        loadingDownloadTipeKecelakaan.setVisibility(View.GONE);
 
                     }
                 },500);
@@ -416,6 +438,7 @@ public class SettingsActivity extends AppCompatActivity {
         } else {
             while (data.moveToNext()) {
                 UserID = data.getString(0);
+                GroupAccess = data.getString(2);
             }
         }
     }
@@ -670,6 +693,53 @@ public class SettingsActivity extends AppCompatActivity {
         });
     }
 
+    private void getTipeKecelakaan() {
+        retrofit = new Retrofit.Builder()
+                .baseUrl(linkAPI)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
+
+        Call<List<TipeKecelakaan>> call = jsonPlaceHolderApi.GetTipeKecelakaan();
+
+        call.enqueue(new Callback<List<TipeKecelakaan>>() {
+            @Override
+            public void onResponse(Call<List<TipeKecelakaan>> call, Response<List<TipeKecelakaan>> response) {
+                if (!response.isSuccessful()) {
+                    GetAlertFailed("Koneksi Bermasalah");
+//                    Toast.makeText(SettingsActivity.this, "Koneksi Bermasalah", Toast.LENGTH_SHORT).show();
+                } else {
+                    DataBaseAccess dataBaseAccess = DataBaseAccess.getInstance(SettingsActivity.this);
+                    dataBaseAccess.open();
+
+                    dataBaseAccess.DeleteAll("TipeKecelakaan").getCount();
+
+                    List<TipeKecelakaan> tp = response.body();
+
+                    if (tp.get(0).GetStatus().equals("failed")){
+                        GetAlertFailed("Data tipe kecelakaan tidak ditemukan");
+                    }
+                    else {
+                        for (TipeKecelakaan dt : tp) {
+                            dataBaseAccess.insertTipeKecelakaan(dt.getKecelakaanID(), dt.getKecelakaan(), dt.getKeterangan(), dt.getSort());
+                        }
+                        GetAlertSuccess("Tipe kecelakaan berhasil diperbaharui");
+//                    Toast.makeText(SettingsActivity.this, "Kehadiran berhasil diperbaharui", Toast.LENGTH_SHORT).show();
+                    }
+                    dataBaseAccess.close();
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<TipeKecelakaan>> call, Throwable t) {
+                GetAlertFailed("Koneksi Bermasalah - Gagal Mengurai Data");
+//                Toast.makeText(SettingsActivity.this, "Koneksi Bermasalah - Gagal Mengurai Data", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     private void getTenagaKerja() {
         retrofit = new Retrofit.Builder()
                 .baseUrl(linkAPI)
@@ -790,6 +860,7 @@ public class SettingsActivity extends AppCompatActivity {
                     dataBaseAccess.DeleteAll("TenagaKerja").getCount();
                     dataBaseAccess.DeleteAll("Kehadiran").getCount();
                     dataBaseAccess.DeleteAll("User").getCount();
+                    dataBaseAccess.DeleteAll("KecelakaanKerja").getCount();
                     startActivity(new Intent(SettingsActivity.this, SplashScreen.class));
                 }
             }
@@ -850,6 +921,10 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(SettingsActivity.this, MenuActivity.class));
+//        if(GroupAccess.equals("Mandor")){
+            startActivity(new Intent(SettingsActivity.this, MenuActivity.class));
+//        }else {
+//            startActivity(new Intent(SettingsActivity.this, Menu2Activity.class));
+//        }
     }
 }

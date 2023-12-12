@@ -73,8 +73,8 @@ public class CekAbsensiActivity extends AppCompatActivity {
         tanggal = findViewById(R.id.tanggal);
         listView = findViewById(R.id.listView);
         ProgressTK = findViewById(R.id.ProgressTK);
-        test = findViewById(R.id.test);
-        nama = findViewById(R.id.nama);
+//        test = findViewById(R.id.test);
+//        nama = findViewById(R.id.nama);
 
         SharedPreferences sharedPreferences = getSharedPreferences("AbsensiPancang", Context.MODE_PRIVATE);
         linkAPI = sharedPreferences.getString("linkAPI", "-");
@@ -142,7 +142,7 @@ public class CekAbsensiActivity extends AppCompatActivity {
             public void onResponse(Call<List<HistoryCekAbsensi>> call, Response<List<HistoryCekAbsensi>> response) {
                 listView.setAdapter(null);
                 if (!response.isSuccessful()) {
-                    Toast.makeText(CekAbsensiActivity.this, "Koneksi Bermasalah", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CekAbsensiActivity.this, "Koneksi bermasalah", Toast.LENGTH_SHORT).show();
                 } else {
                     List<HistoryCekAbsensi> absensis = response.body();
                     if (absensis.get(0).getResponse().equals("success")) {
@@ -181,7 +181,7 @@ public class CekAbsensiActivity extends AppCompatActivity {
                         adapterCekAbsensi = new AdapterCekAbsensi(CekAbsensiActivity.this, Nama,Nik,KodeWilayah,JamMasuk,JamPulang,KehadiranMasuk,KehadiranPulang, KodeSubPersilMasuk, KodeSubPersilPulang, KetMasuk, KetPulang);
                         listView.setAdapter(adapterCekAbsensi);
                     } else {
-                        Toast.makeText(CekAbsensiActivity.this, "Tidak Ada Absensi di Tanggal Yang diPilih", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CekAbsensiActivity.this, "Tidak ada absensi di tanggal ini", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -189,7 +189,7 @@ public class CekAbsensiActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<HistoryCekAbsensi>> call, Throwable t) {
                 listView.setAdapter(null);
-                Toast.makeText(CekAbsensiActivity.this, "Koneksi Bermasalah - Gagal Mengurai Data", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CekAbsensiActivity.this, "Koneksi bermasalah - gagal mengurai data", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -208,7 +208,7 @@ public class CekAbsensiActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<HistoryCekAbsensi>> call, Response<List<HistoryCekAbsensi>> response) {
                 if (!response.isSuccessful()) {
-                    Toast.makeText(CekAbsensiActivity.this, "Koneksi Bermasalah", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CekAbsensiActivity.this, "Koneksi bermasalah", Toast.LENGTH_SHORT).show();
                 } else {
                     List<HistoryCekAbsensi> absensis = response.body();
                     if (absensis.get(0).getResponse().equals("success")) {
@@ -236,7 +236,7 @@ public class CekAbsensiActivity extends AppCompatActivity {
                             }
                         });
                     } else {
-                        Toast.makeText(CekAbsensiActivity.this, "Tidak Ada Absensi di Tanggal Yang diPilih", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CekAbsensiActivity.this, "Tidak ada absensi di tanggal ini", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -244,7 +244,7 @@ public class CekAbsensiActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<HistoryCekAbsensi>> call, Throwable t) {
                 listView.setAdapter(null);
-                Toast.makeText(CekAbsensiActivity.this, "Koneksi Bermasalah - Gagal Mengurai Data", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CekAbsensiActivity.this, "Koneksi bermasalah - gagal mengurai data", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -256,7 +256,7 @@ public class CekAbsensiActivity extends AppCompatActivity {
         Cursor data = dataBaseAccess.Get("APIUrl");
 
         if (data.getCount() == 0) {
-            Toast.makeText(this, "API Url Tidak Tersimpan", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "API Url tidak tersimpan", Toast.LENGTH_SHORT).show();
         } else {
 //            String[] aNama = new String[data.getCount() + 1];
 //            String[] aLinkAPI = new String[data.getCount() + 1];

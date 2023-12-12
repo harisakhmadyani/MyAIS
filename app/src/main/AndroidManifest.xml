@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
     <uses-permission
         android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
         tools:ignore="ProtectedPermissions" />
@@ -24,28 +25,17 @@
         android:theme="@style/Theme.MyAIS"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-<!--        <activity-->
-<!--            android:name=".MainHistoryNewActivity"-->
-<!--            android:exported="false"-->
-<!--            android:label="@string/title_activity_main_history_new"-->
-<!--            android:theme="@style/Theme.AbsensiPancang.NoActionBar">-->
-<!--            <meta-data-->
-<!--                android:name="android.app.lib_name"-->
-<!--                android:value="" />-->
-<!--        </activity>-->
-<!--        <activity-->
-<!--            android:name=".HistoryNewActivity"-->
-<!--            android:exported="false"-->
-<!--            android:label="@string/title_activity_history_new"-->
-<!--            android:theme="@style/Theme.AbsensiPancang.NoActionBar">-->
-<!--            <meta-data-->
-<!--                android:name="android.app.lib_name"-->
-<!--                android:value="" />-->
-<!--        </activity>-->
-        <activity android:name=".Activity.MainHistoryNewActivity"
-            android:exported="false"/>
+        <activity
+            android:name=".Activity.MainHistoryNewActivity"
+            android:exported="false" />
         <activity
             android:name=".Activity.ChooseAnggotaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.ListKecelakaanKerjaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.KecelakaanKerjaActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.CekAbsensiActivity"
@@ -60,10 +50,19 @@
             android:name=".Activity.SettingsActivity"
             android:exported="false" />
         <activity
+            android:name=".Activity.Settings2Activity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.AnggotaActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.MenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Menu2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.MonKecelakaanKerjaActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.LoginActivity"

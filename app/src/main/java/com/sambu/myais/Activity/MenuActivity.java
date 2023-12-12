@@ -26,7 +26,7 @@ import com.sambu.myais.SplashScreen;
 
 public class MenuActivity extends AppCompatActivity {
 
-    LinearLayout absensi, absensimasuk, absensiistirahat, absensimasuk2, absensipulang,historyabsen, cekabsen, anggota, settings;
+    LinearLayout absensi, absensimasuk, absensiistirahat, absensimasuk2, absensipulang,historyabsen, cekabsen, anggota, settings, kecelakaankerja, monKecKerja;
     TextView namapancang, serialapp, koneksi, appversion, userid;
 
     Integer jmlanggota = 0, jmlkehadiran = 0;
@@ -47,6 +47,8 @@ public class MenuActivity extends AppCompatActivity {
         cekabsen = findViewById(R.id.cekabsen);
         anggota = findViewById(R.id.anggota);
         settings = findViewById(R.id.settings);
+        kecelakaankerja = findViewById(R.id.kecelakaan_kerja);
+        monKecKerja = findViewById(R.id.monKecKerja);
 //        namapancang = findViewById(R.id.namapancang);
         userid = findViewById(R.id.userid);
         serialapp = findViewById(R.id.serialapp);
@@ -187,6 +189,26 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(new Intent(MenuActivity.this, SettingsActivity.class));
             }
         });
+
+        kecelakaankerja.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String vld = cekDataMaster();
+
+                if(vld.equals("valid")){
+                    startActivity(new Intent(MenuActivity.this, ListKecelakaanKerjaActivity.class));
+                } else {
+                    Toast.makeText(MenuActivity.this, vld, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        monKecKerja.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MenuActivity.this, MonKecelakaanKerjaActivity.class));
+            }
+        });
     }
 
     private void getUser() {
@@ -314,6 +336,30 @@ public class MenuActivity extends AppCompatActivity {
         });
         textfailed.setText(msg);
         alertDialog.show();
+    }
+
+    private String cekDataMaster(){
+        DataBaseAccess dataBaseAccess = DataBaseAccess.getInstance(MenuActivity.this);
+        dataBaseAccess.open();
+
+        Cursor data = dataBaseAccess.Get("TenagaKerja");
+        Cursor data2 = dataBaseAccess.Get("SubPersilKelapa");
+        Cursor data3 = dataBaseAccess.Get("TipeKecelakaan");
+
+        if(data.getCount() == 0){
+            return "Data tenaga kerja tidak ditemukan";
+        }
+
+        if(data2.getCount() == 0){
+            return  "Data persil tidak ditemukan";
+        }
+
+        if(data3.getCount() == 0){
+            return  "Data tipe kecelakaan tidak ditemukan";
+        }
+
+        return "valid";
+
     }
 
     @Override

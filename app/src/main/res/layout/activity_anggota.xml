@@ -21,6 +21,7 @@
             android:src="@drawable/member" />
 
         <TextView
+            android:id="@+id/mnuTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -84,6 +85,7 @@
 
                 <TableRow>
                     <TextView
+                        android:id="@+id/tblTitle1"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
@@ -102,6 +104,7 @@
                         android:textSize="14dp"/>
 
                     <TextView
+                        android:id="@+id/tblTitle3"
                         android:layout_width="20dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

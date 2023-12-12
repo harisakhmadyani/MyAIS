@@ -30,6 +30,7 @@ import com.sambu.myais.DataBase.DataBaseAccess;
 import com.sambu.myais.R;
 import com.sambu.myais.Retrofit.DeviceInfo;
 import com.sambu.myais.Retrofit.JsonPlaceHolderApi;
+import com.sambu.myais.SplashScreen;
 
 import java.util.HashMap;
 import java.util.List;
@@ -57,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
     Integer[] Toleransi;
     String nomorSerial, APIName, APIUrl;
     String[] IDPancang, PancangName;
-    String user, KodeWilayah;
+    String user, KodeWilayah, GroupAccess;
 
     JsonPlaceHolderApi jsonPlaceHolderApi;
     Retrofit retrofit;
@@ -91,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (password.getText().toString().equals("")) {
-                    Toast.makeText(LoginActivity.this, "Anda Belum Memasukkan Password Anda", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Anda belum memasukkan password", Toast.LENGTH_SHORT).show();
                 } else {
                     verifikasiTablet();
                 }
@@ -127,7 +128,7 @@ public class LoginActivity extends AppCompatActivity {
         Cursor data = dataBaseAccess.Get("APIUrl");
 
         if (data.getCount() == 0) {
-            Toast.makeText(this, "API Url Tidak Tersimpan", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "API Url tidak tersimpan", Toast.LENGTH_SHORT).show();
         } else {
 //            String[] aNama = new String[data.getCount() + 1];
 //            String[] aLinkAPI = new String[data.getCount() + 1];
@@ -203,6 +204,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (deviceInfos.get(0).getLanjut().equals("1")) {
 //                        simpanDetailPancang();
                         KodeWilayah = deviceInfos.get(0).getKodeWilayah();
+                        GroupAccess = deviceInfos.get(0).getGroupAccess();
                         simpanUser();
                     } else {
                         setInfo("finish");
@@ -228,14 +230,22 @@ public class LoginActivity extends AppCompatActivity {
 
         Cursor data = dataBaseAccess.Get("User");
         if(data.getCount() == 0){
-            if (dataBaseAccess.insertUser(user, KodeWilayah)) {
-                startActivity(new Intent(this, MenuActivity.class));
+            if (dataBaseAccess.insertUser(user, KodeWilayah, GroupAccess)) {
+                if(GroupAccess.equals("Mandor")){
+                    startActivity(new Intent(this, MenuActivity.class));
+                }else {
+                    startActivity(new Intent(this, Menu2Activity.class));
+                }
             } else {
                 setInfo("finish");
                 Toast.makeText(this, "Gagal Simpan Data", Toast.LENGTH_SHORT).show();
             }
         } else {
-            startActivity(new Intent(this, MenuActivity.class));
+            if(GroupAccess.equals("Mandor")){
+                startActivity(new Intent(this, MenuActivity.class));
+            } else if (GroupAccess.equals("Adm-Dept")) {
+                startActivity(new Intent(this, Menu2Activity.class));
+            }
         }
     }
 

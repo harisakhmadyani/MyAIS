@@ -9,8 +9,8 @@ android {
         applicationId "com.sambu.myais"
         minSdk 21
         targetSdk 33
-        versionCode 7
-        versionName "7.1"
+        versionCode 10
+        versionName "10.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

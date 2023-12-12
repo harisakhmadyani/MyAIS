@@ -76,10 +76,11 @@ public class DataBaseAccess {
         return this.sqLiteDatabase.insert("PancangTable", (String) null, contentValues) != -1;
     }
 
-    public boolean insertUser(String UserID, String KodeWilayah) {
+    public boolean insertUser(String UserID, String KodeWilayah, String GroupAccess) {
         ContentValues contentValues = new ContentValues();
         contentValues.put("UserID", UserID);
         contentValues.put("KodeWilayah", KodeWilayah);
+        contentValues.put("GroupAccess", GroupAccess);
         return this.sqLiteDatabase.insert("User", (String) null, contentValues) != -1;
     }
 
@@ -132,6 +133,26 @@ public class DataBaseAccess {
         contentValues.put("Nama", Nama);
         contentValues.put("ShortName", ShortName);
         return this.sqLiteDatabase.insert("Kehadiran", (String) null, contentValues) != -1;
+    }
+
+    public boolean insertTipeKecelakaan(Integer ID, String Kecelakaan, String Ket, Integer Sort) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("ID", ID);
+        contentValues.put("Kecelakaan", Kecelakaan);
+        contentValues.put("Ket", Ket);
+        contentValues.put("Sort", Sort);
+        return this.sqLiteDatabase.insert("TipeKecelakaan", (String) null, contentValues) != -1;
+    }
+
+    public boolean insertKecelakaanKerja(String waktu, Integer regno, String subpersil, Integer tipeKec, String kronologi, Boolean terkirim) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("Tanggal", waktu);
+        contentValues.put("RegNo", regno);
+        contentValues.put("KodeSubPersil", subpersil);
+        contentValues.put("KecelakaanID", tipeKec);
+        contentValues.put("KronologiKecelakaan", kronologi);
+        contentValues.put("Terkirim", terkirim);
+        return this.sqLiteDatabase.insert("KecelakaanKerja", (String) null, contentValues) != -1;
     }
 
     public boolean insertTenagaKerja(Integer regno, String nik, String nama, String kodewilayah) {
@@ -208,5 +229,11 @@ public class DataBaseAccess {
         ContentValues contentValues = new ContentValues();
         contentValues.put("Terkirim", true);
         return (this.sqLiteDatabase.update("Absensi", contentValues, "ID=?", new String[]{ID})) != -1;
+    }
+
+    public boolean updateKecelakaan(String ID) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("Terkirim", true);
+        return (this.sqLiteDatabase.update("KecelakaanKerja", contentValues, "ID=?", new String[]{ID})) != -1;
     }
 }

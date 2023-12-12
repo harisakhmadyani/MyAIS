@@ -20,6 +20,7 @@ import com.sambu.myais.DataBase.DataBaseAccess;
 import com.sambu.myais.ListView.AdapterAnggota;
 import com.sambu.myais.R;
 import com.sambu.myais.Retrofit.JsonPlaceHolderApi;
+import com.sambu.myais.SplashScreen;
 
 import retrofit2.Retrofit;
 
@@ -29,13 +30,13 @@ public class AnggotaActivity extends AppCompatActivity {
     ListView listAnggota;
     ProgressBar ProgressTK;
 //    ProgressBar loadingrefresh;
-    TextView nomember;
+    TextView nomember, mnuTitle, tblTitle1, tblTitle3;
 
 //    Integer IDPancang;
 
     JsonPlaceHolderApi jsonPlaceHolderApi;
     Retrofit retrofit;
-    String linkAPI = "";
+    String linkAPI = "", UserID = "", KodeWilayah = "", GroupAccess = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +48,16 @@ public class AnggotaActivity extends AppCompatActivity {
         ProgressTK = findViewById(R.id.ProgressTK);
 //        loadingrefresh = findViewById(R.id.loadingrefresh);
         nomember = findViewById(R.id.nomember);
+        mnuTitle = findViewById(R.id.mnuTitle);
+        tblTitle1 = findViewById(R.id.tblTitle1);
+        tblTitle3 = findViewById(R.id.tblTitle3);
 
         SharedPreferences sharedPreferences = getSharedPreferences("AbsensiPancang", Context.MODE_PRIVATE);
         linkAPI = sharedPreferences.getString("linkAPI", "-");
 
 //        getIDPancang();
+        getUser();
+        setTitleView();
 
         new Handler().postDelayed(new Runnable() {
             public void run() {
@@ -121,6 +127,30 @@ public class AnggotaActivity extends AppCompatActivity {
 //        });
 //    }
 
+    private void getUser() {
+        DataBaseAccess dataBaseAccess = DataBaseAccess.getInstance(getApplicationContext());
+        dataBaseAccess.open();
+        Cursor data = dataBaseAccess.Get("User");
+
+        if (data.getCount() == 0) {
+            startActivity(new Intent(this, SplashScreen.class));
+        } else {
+            while (data.moveToNext()) {
+                UserID = data.getString(0);
+                KodeWilayah = data.getString(1);
+                GroupAccess = data.getString(2);
+            }
+        }
+    }
+
+    private void setTitleView() {
+        if(!GroupAccess.equals("Mandor")){
+            mnuTitle.setText("Data Karyawan");
+            tblTitle1.setText("Nama Karyawan");
+            tblTitle3.setText("Dept");
+        }
+    }
+
     private void getTenagaKerja() {
         DataBaseAccess dataBaseAccess = DataBaseAccess.getInstance(getApplicationContext());
         dataBaseAccess.open();
@@ -170,6 +200,10 @@ public class AnggotaActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(AnggotaActivity.this, MenuActivity.class));
+        if(GroupAccess.equals("Mandor")){
+            startActivity(new Intent(AnggotaActivity.this, MenuActivity.class));
+        }else {
+            startActivity(new Intent(AnggotaActivity.this, Menu2Activity.class));
+        }
     }
 }

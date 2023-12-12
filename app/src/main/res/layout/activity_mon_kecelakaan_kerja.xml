@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background2"
+    android:orientation="vertical"
+    tools:context=".Activity.MonKecelakaanKerjaActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/kecelakaan_kerja2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Monitoring Kecelakaan Kerja"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <EditText
+                android:id="@+id/tgl1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/box_rounded_transparent_10"
+                android:drawableEnd="@drawable/ic_baseline_calendar_month_24"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:textSize="12dp"
+                android:layout_marginRight="5dp"/>
+
+            <EditText
+                android:id="@+id/tgl2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/box_rounded_transparent_10"
+                android:drawableEnd="@drawable/ic_baseline_calendar_month_24"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:textSize="12dp"
+                android:layout_marginLeft="5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/box_rounded_transparent"
+            android:backgroundTint="#0173B1"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="Search"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:drawableLeft="@drawable/ic_baseline_search_24"
+                android:drawablePadding="5dp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="5dp"
+            android:background="#8C8C8C" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="15dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
+        android:paddingBottom="10dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/nomember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Tidak ada data kecelakaan hari ini"
+            android:visibility="gone" />
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:divider="#00000000"
+            android:dividerHeight="5dp" />
+
+        <ProgressBar
+            android:id="@+id/ProgressTK"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:indeterminateTint="#0173B1"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+</LinearLayout>

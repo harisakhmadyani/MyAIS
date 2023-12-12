@@ -4,15 +4,15 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.sambu.absensipancang",
+  "applicationId": "com.sambu.myais",
   "variantName": "release",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 7,
-      "versionName": "7.0",
+      "versionCode": 10,
+      "versionName": "10.0",
       "outputFile": "app-release.apk"
     }
   ],

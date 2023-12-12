@@ -123,8 +123,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_centerVertical="true"
-            android:indeterminateTint="@color/green"
+            android:indeterminateTint="#0173B1"
             android:visibility="visible"/>
     </RelativeLayout>
-
 </LinearLayout>
